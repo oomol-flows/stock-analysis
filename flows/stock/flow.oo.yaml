@@ -1,0 +1,56 @@
+nodes:
+  - task: self::get_stock_data
+    node_id: get_stock_data#1
+    inputs_from:
+      - handle: in
+        value: input value
+      - handle: handle0
+        value: input value
+      - handle: stock_name
+        value: API
+      - handle: start_time
+        value: 2023-09-01T14:25:21+08:00
+      - handle: handle1
+        value: input value
+      - handle: end_time
+        value: 2024-09-07T14:25:21+08:00
+  - task: self::SMA
+    node_id: SMA#1
+    inputs_from:
+      - handle: in
+        from_node:
+          - node_id: +python#1
+            output_handle: df
+      - handle: handle0
+        value: input value
+      - handle: df
+        from_node:
+          - node_id: get_stock_data#1
+            output_handle: df
+      - handle: stock_name
+        from_node:
+          - node_id: get_stock_data#1
+            output_handle: stock_name
+    description: >-
+      简单移动平均线（Simple Moving Average, SMA）:
+
+      简单移动平均线是将一定时期内股票价格的平均值计算出来。当价格高于其移动平均线时，通常被视为上升趋势；反之，则为下降趋势。交易者可以依据价格与移动平均线的交叉来生成买入或卖出信号。
+  - task: self::EMA
+    node_id: EMA#2
+    inputs_from:
+      - handle: short_window
+        value: 30
+      - handle: long_window
+        value: 24
+      - handle: df
+        from_node:
+          - node_id: get_stock_data#1
+            output_handle: df
+      - handle: stock_name
+        from_node:
+          - node_id: get_stock_data#1
+            output_handle: stock_name
+    description: >-
+      指数移动平均线（Exponential Moving Average, EMA）:
+
+      EMA 也是一种移动平均线，但它赋予近期数据更高的权重，使得对最新价格变化的响应更快。EMA 与 SMA 类似，但更强调近期价格的重要性，因此在趋势识别方面更为敏感。

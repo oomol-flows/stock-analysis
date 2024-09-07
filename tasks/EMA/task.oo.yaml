@@ -1,0 +1,37 @@
+inputs_def:
+  - handle: df
+    description: Input
+    json_schema:
+      contentMediaType: oomol/var
+  - handle: stock_name
+    json_schema:
+      type: string
+  - handle: short_window
+    json_schema:
+      type: number
+      ui:options:
+        step: 1
+      minimum: 1
+      maximum: 100
+    value: 12
+  - handle: long_window
+    json_schema:
+      type: number
+      ui:options:
+        step: 1
+      minimum: 1
+      maximum: 100
+    value: 26
+outputs_def:
+  - handle: df
+    description: Output
+    json_schema:
+      contentMediaType: oomol/var
+icon: ":fa6-solid:computer:currentColor:"
+ui:
+  default_width: 530
+executor:
+  name: python
+  options:
+    spawn: false
+    entry: main.py

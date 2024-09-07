@@ -1,0 +1,148 @@
+{
+  "nodes": [
+    {
+      "id": "get_stock_data#1",
+      "contentWidth": 530,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 704.4439719264326,
+        "y": -795.586226526939
+      },
+      "positionAbsolute": {
+        "x": 704.4439719264326,
+        "y": -795.586226526939
+      },
+      "width": 544,
+      "height": 185
+    },
+    {
+      "id": "SMA#1",
+      "contentWidth": 530,
+      "scriptletFolded": false,
+      "previewFolded": false,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 1392.6319298276737,
+        "y": -434.74028948053626
+      },
+      "positionAbsolute": {
+        "x": 1392.6319298276737,
+        "y": -434.74028948053626
+      },
+      "width": 544,
+      "height": 138
+    },
+    {
+      "id": "EMA#2",
+      "contentWidth": 530,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 2267.5407751689054,
+        "y": -568.1136038810225
+      },
+      "positionAbsolute": {
+        "x": 2267.5407751689054,
+        "y": -568.1136038810225
+      },
+      "width": 544,
+      "height": 194
+    }
+  ],
+  "edges": [
+    {
+      "id": "dd1af7f3-cfc4-496f-8696-b9ec46041f5e",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "get_stock_data#1",
+            "output_handle": "df"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "SMA#1",
+            "input_handle": "df"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    },
+    {
+      "id": "1af7f3cf-c499-4f86-96b9-ec46041f5ed1",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "get_stock_data#1",
+            "output_handle": "stock_name"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "SMA#1",
+            "input_handle": "stock_name"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    },
+    {
+      "id": "dad1b946-6baa-44b9-b34f-ccdee8c07bef",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "get_stock_data#1",
+            "output_handle": "df"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "EMA#2",
+            "input_handle": "df"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-python)",
+        "var(--edge-python)"
+      ]
+    },
+    {
+      "id": "d1b9466b-aaa4-49b3-8fcc-dee8c07bef36",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "get_stock_data#1",
+            "output_handle": "stock_name"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "EMA#2",
+            "input_handle": "stock_name"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    }
+  ]
+}
