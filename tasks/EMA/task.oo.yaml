@@ -29,7 +29,7 @@ outputs_def:
       contentMediaType: oomol/var
 icon: ":fa6-solid:computer:currentColor:"
 ui:
-  default_width: 530
+  default_width: 694
 executor:
   name: python
   options:

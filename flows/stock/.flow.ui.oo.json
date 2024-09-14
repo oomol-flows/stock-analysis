@@ -2,7 +2,7 @@
   "nodes": [
     {
       "id": "get_stock_data#1",
-      "contentWidth": 530,
+      "contentWidth": 580.2237899697874,
       "selected": false,
       "dragging": false,
       "position": {
@@ -13,15 +13,15 @@
         "x": 704.4439719264326,
         "y": -795.586226526939
       },
-      "width": 544,
-      "height": 185
+      "width": 594,
+      "height": 329
     },
     {
-      "id": "SMA#1",
-      "contentWidth": 530,
       "scriptletFolded": false,
       "previewFolded": false,
-      "selected": false,
+      "id": "SMA#1",
+      "contentWidth": 554.4309980085754,
+      "selected": true,
       "dragging": false,
       "position": {
         "x": 1392.6319298276737,
@@ -31,8 +31,8 @@
         "x": 1392.6319298276737,
         "y": -434.74028948053626
       },
-      "width": 544,
-      "height": 138
+      "width": 568,
+      "height": 269
     },
     {
       "id": "EMA#2",
@@ -40,20 +40,21 @@
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 2267.5407751689054,
-        "y": -568.1136038810225
+        "x": 2322.3841842939746,
+        "y": -603.4571342060672
       },
       "positionAbsolute": {
-        "x": 2267.5407751689054,
-        "y": -568.1136038810225
+        "x": 2322.3841842939746,
+        "y": -603.4571342060672
       },
       "width": 544,
-      "height": 194
+      "height": 329
     }
   ],
   "edges": [
     {
       "id": "dd1af7f3-cfc4-496f-8696-b9ec46041f5e",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -77,6 +78,7 @@
     },
     {
       "id": "1af7f3cf-c499-4f86-96b9-ec46041f5ed1",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -100,6 +102,7 @@
     },
     {
       "id": "dad1b946-6baa-44b9-b34f-ccdee8c07bef",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -123,6 +126,7 @@
     },
     {
       "id": "d1b9466b-aaa4-49b3-8fcc-dee8c07bef36",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
