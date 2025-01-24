@@ -1,0 +1,46 @@
+nodes:
+  - task: self::get_stock_data
+    node_id: get_stock_data#1
+    inputs_from:
+      - handle: stock_name
+        value: AAPL
+      - handle: start_time
+        value: 2023-10-05T14:25:21+08:00
+      - handle: handle1
+        value: input value
+      - handle: end_time
+        value: 2024-10-31T14:25:21+08:00
+  - task: self::SMA
+    node_id: SMA#1
+    inputs_from:
+      - handle: df
+        from_node:
+          - node_id: get_stock_data#1
+            output_handle: df
+      - handle: stock_name
+        from_node:
+          - node_id: get_stock_data#1
+            output_handle: stock_name
+    description: >-
+      Simple Moving Average (SMA):
+
+      The simple moving average is the average of stock prices over a certain period of time. When the price is above its moving average, it is generally considered an uptrend; when the price is above its moving average, it is a downtrend. Traders can generate buy or sell signals based on price crossing a moving average.
+  - task: self::EMA
+    node_id: EMA#2
+    inputs_from:
+      - handle: short_window
+        value: 30.03
+      - handle: long_window
+        value: 24
+      - handle: df
+        from_node:
+          - node_id: get_stock_data#1
+            output_handle: df
+      - handle: stock_name
+        from_node:
+          - node_id: get_stock_data#1
+            output_handle: stock_name
+    description: >-
+      Exponential Moving Average (EMA):
+
+      The EMA is also a moving average, but it gives more weight to recent data, making it more responsive to the latest price changes. EMA is similar to SMA, but puts more emphasis on recent prices and is therefore more sensitive in terms of trend identification.

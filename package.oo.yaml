@@ -1,0 +1,15 @@
+icon: https://package-assets.oomol.com/packages/stock-analysis/0.0.1/files/package/icon.png
+
+scripts:
+  # Script executed when the container is first loaded
+  # eg: bootstrap: pip install pandas
+  bootstrap: |
+    pnpm install && pip install --user -r requirements.txt
+dependencies:
+  {}
+name: stock-analysis
+version: 0.0.2
+displayName: Stock Analysis
+description: This is a simple stock analysis case that includes obtaining data and drawing.
+releaseNotes: add code repo
+repository: https://github.com/oomol-flows/stock-analysis

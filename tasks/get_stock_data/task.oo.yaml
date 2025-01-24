@@ -1,0 +1,33 @@
+inputs_def:
+  - handle: stock_name
+    description: Input
+    json_schema:
+      type: string
+    value: AAPL
+  - handle: start_time
+    json_schema:
+      type: string
+      format: date-time
+    value: 2022-09-01T14:25:21+08:00
+  - handle: end_time
+    json_schema:
+      type: string
+      format: date-time
+    value: 2024-09-07T14:25:21+08:00
+outputs_def:
+  - handle: df
+    description: Output
+    json_schema:
+      contentMediaType: oomol/var
+  - handle: stock_name
+    json_schema:
+      type: string
+icon: ":fa6-solid:database:currentColor:"
+ui:
+  default_width: 530
+executor:
+  name: python
+  options:
+    spawn: false
+    entry: main.py
+description: ""
